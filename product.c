@@ -3,18 +3,21 @@
 
 int addProduct(Shopping *p)
 {
-    printf("추가할 재품은? : ");
+    printf("추가할 제품은? : ");
     getchar();
     scanf("%[^\n]s",p->name);
 
-    printf("재품 재고량은? : ");
+    printf("제품 재고량은? : ");
     scanf("%d", &p->quantity);
 
-    printf("재품 가격은? : ");
+    printf("제품 가격은? : ");
     scanf("%d", &p->price);
 
-    p -> star_rate = 0;
-    p -> star_count = 0;
+    printf("제품 별 평점은? : ");
+    scanf("%d", &p -> star_rate);
+  
+    printf("제품 별 갯수는? : ");
+    scanf("%d", &p -> star_count);
 
     return 1;
 }
@@ -27,14 +30,14 @@ void readProduct(Shopping p)
 
 int updateProduct(Shopping *p)
 {
-    printf("재품명은? : ");
+    printf("제품명은? : ");
     getchar();
     scanf("%[^\n]s",p->name);
 
-    printf("재품 재고량은? : ");
+    printf("제품 재고량은? : ");
     scanf("%d", &p->quantity);
 
-    printf("재품 가격은? : ");
+    printf("제품 가격은? : ");
     scanf("%d", &p->price);
 
     return 1;
