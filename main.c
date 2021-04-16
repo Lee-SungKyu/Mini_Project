@@ -4,15 +4,15 @@ int selectMenu()
 {
     int menu;
     printf("==================\n");
-    printf("1. 재품조회\n");
-    printf("2. 재품추가\n");
-    printf("3. 재품수정\n");
-    printf("4. 재품삭제\n");
-    printf("5. 재품저장\n");
-    printf("6. 재품검색(이름)\n");
-    printf("7. 재품검색(재품량)\n");
-    printf("8. 재품검색(최소금액))\n");
-    printf("9. 재품검색(별평점)\n");
+    printf("1. 제품조회\n");
+    printf("2. 제품추가\n");
+    printf("3. 제품수정\n");
+    printf("4. 제품삭제\n");
+    printf("5. 제품저장\n");
+    printf("6. 제품검색(이름)\n");
+    printf("7. 제품검색(제품량)\n");
+    printf("8. 제품검색(최소금액))\n");
+    printf("9. 제품검색(별평점)\n");
     printf("0. 종료\n");
     printf("==================\n");
     printf("=> 원하는 메뉴는? : ");
