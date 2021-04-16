@@ -57,7 +57,7 @@ void searchProduct(Shopping *p[], int count)
     int scnt = 0;
     char search[20];
 
-    printf("검색할 재품은? : ");
+    printf("검색할 제품은? : ");
     scanf("%s", search);
 
     printf("\n No Price Quantity StarRate StarCount Name \n");
@@ -80,7 +80,7 @@ void searchPquantity(Shopping *p[], int count)
 {
     int scnt = 0;
     int find = 0;
-    printf("검색할 최소 재품량은? : ");
+    printf("검색할 최소 제품량은? : ");
     scanf("%d", &find);
 
     printf("\n No Price Quantity StarRate StarCount Name \n");
