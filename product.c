@@ -22,7 +22,7 @@ int addProduct(Shopping *p)
 
 void readProduct(Shopping p)
 {
-    printf("%d  %d      %d      %d      %s\n\n",p.price,p.quantity,p.star_rate,p.star_count,p.name);
+    printf(" %d    %d        %d        %d      %s\n\n",p.price,p.quantity,p.star_rate,p.star_count,p.name);
 }
 
 int updateProduct(Shopping *p)
@@ -49,3 +49,54 @@ void deleteProduct(Shopping *p)
     p -> star_count = -1;
 
 }
+/*
+int main()
+{
+    Shopping slist;
+    int menu; //Selecting Menu Option
+    int count; //Total items
+
+    while(1)
+    {
+        menu = selectMenu();
+
+        if(menu == 0) break;
+
+        else if (menu == 1)
+        {
+            readProduct(slist);
+        }
+
+        else if (menu == 2)
+        {
+            count += addProduct(&slist);
+            printf("=> ?????!\n\n");
+
+        }
+        
+        else if (menu == 3)
+        {
+            updateProduct(&slist);
+        }
+
+        else if (menu == 4)
+        {
+            printf("?????? ??????ð?????? (????: 1) : ");
+            int delete;
+            scanf("%d", &delete);
+
+            if (delete == 1)
+            {
+                deleteProduct(&slist);
+                count--;
+            }
+            else
+            {
+                printf("????!\n");
+            }
+        }
+    }
+    printf("?????!\n");
+    return 0;
+}
+*/
