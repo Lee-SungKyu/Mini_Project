@@ -40,6 +40,12 @@ int updateProduct(Shopping *p)
     printf("제품 가격은? : ");
     scanf("%d", &p->price);
 
+    printf("제품 별 평점은? : ");
+    scanf("%d", &p -> star_rate);
+  
+    printf("제품 별 갯수는? : ");
+    scanf("%d", &p -> star_count);
+
     return 1;
 }
 
