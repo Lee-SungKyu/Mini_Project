@@ -2,20 +2,22 @@
 
 int selectMenu()
 {
-        int menu;
-	#ifdef DEBUG
-		printf("=> DEBUGMODE\n");
-	#endif
-        printf("==================\n");
-        printf("1. 재품조회\n");
-        printf("2. 재품추가\n");
-        printf("3. 재품수정\n");
-        printf("4. 재품삭제\n");
-        printf("0. 종료\n");
-        printf("==================\n");
-        printf("=> 원하는 메뉴는? : ");
-        scanf("%d", &menu);
-        return menu;
+    int menu;
+    printf("==================\n");
+    printf("1. 재품조회\n");
+    printf("2. 재품추가\n");
+    printf("3. 재품수정\n");
+    printf("4. 재품삭제\n");
+    printf("5. 재품저장\n");
+    printf("6. 재품검색(이름)\n");
+    printf("7. 재품검색(재품량)\n");
+    printf("8. 재품검색(최소금액))\n");
+    printf("9. 재품검색(별평점)\n");
+    printf("0. 종료\n");
+    printf("==================\n");
+    printf("=> 원하는 메뉴는? : ");
+    scanf("%d", &menu);
+    return menu;
 }
 
 int main()
@@ -24,10 +26,37 @@ int main()
     int menu;
     int count = 0;
     int index = 0;
+    int linecount = 0;
+    char c;
+
+    FILE *fp;
+    
+    if ((fp = fopen("store.txt", "r")))
+    {
+
+        for (c = getc(fp); c != EOF; c = getc(fp))
+        {
+
+            if (c == '\n')
+            {
+                linecount++;
+            }
+        }
+        count = loadProduct(slist,linecount);
+        index = count;
+        
+        fclose(fp);
+    }
+    else
+    {
+        printf("\n => 파일없음\n");
+        fp = fopen("store.txt", "wt");
+        fclose(fp);
+    }
 
     while(1)
     {
-        menu = selectMenu();
+        menu = selectMenu(menu);
 
         if(menu == 0) break;
 
@@ -74,15 +103,31 @@ int main()
                     count--;
                 }
 
-
             }
             else
             {
                 printf("취소됨!\n");
             }
-            
-
-
+        }
+        else if (menu == 5)
+        {
+            saveProduct(slist,index);
+        }
+        else if (menu == 6)
+        {
+            searchProduct(slist,index);
+        }
+        else if (menu == 7)
+        {
+            searchPquantity(slist,index);
+        }
+        else if (menu == 8)
+        {
+            searchPrice(slist,index);
+        }
+        else if (menu == 9)
+        {
+            searchPSrating(slist,index);
         }
     }
     printf("종료됨!\n");
